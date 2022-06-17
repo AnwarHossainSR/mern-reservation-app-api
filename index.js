@@ -41,7 +41,4 @@ const connect = async () => {
   }
 };
 
-// app.listen(4000, () => {
-//   console.log("Connected to backend.");
-// });
 connect();
