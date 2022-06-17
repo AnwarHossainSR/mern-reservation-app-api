@@ -3,7 +3,10 @@ import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
+import authRoute from "./routes/auth.js";
+import hotelsRoute from "./routes/hotels.js";
 import usersRoute from "./routes/users.js";
+
 dotenv.config();
 
 const app = express();
@@ -13,9 +16,9 @@ app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 
+app.use("/api/auth", authRoute);
 app.use("/api/users", usersRoute);
-
-//app.use("/api/auth", authRoute);
+app.use("/api/hotels", hotelsRoute);
 
 app.use((err, req, res, next) => {
   const errorStatus = err.status || 500;
