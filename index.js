@@ -1,9 +1,9 @@
+import cookieParser from "cookie-parser";
 import cors from "cors";
 import dotenv from "dotenv";
 import express from "express";
 import mongoose from "mongoose";
-//import authRoute from "./routes/auth.js";
-import cookieParser from "cookie-parser";
+import usersRoute from "./routes/users.js";
 dotenv.config();
 
 const app = express();
@@ -12,6 +12,8 @@ const app = express();
 app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
+
+app.use("/api/users", usersRoute);
 
 //app.use("/api/auth", authRoute);
 
