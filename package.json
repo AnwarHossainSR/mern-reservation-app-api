@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "repository": "https://github.com/AnwarHossainSR/mern-reservation-app-api.git",
   "author": "Anwar Hossain <mahedianwar@gmail.com>",
